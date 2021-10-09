@@ -1,0 +1,13 @@
+.main-page__input {
+  margin-top: 20px;
+
+  & label {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
+  & select {
+    width: 150px;
+    outline: none;
+  }
+}

@@ -1,11 +1,9 @@
-import Header from './components/Header';
-import { SelectCategory } from './components/SelectCategory';
+import HomePage from './pages/home';
 
 export default function App() {
   return (
     <div>
-      <Header />
-      <SelectCategory />
+      <HomePage />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-export const CategoryCard = ({ name, value, icon, notFocusClass, focusClass }) => {
+const CategoryCard = ({ name, value, icon, notFocusClass, focusClass }) => {
   const barberRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -19,3 +19,5 @@ export const CategoryCard = ({ name, value, icon, notFocusClass, focusClass }) =
     </>
   );
 };
+
+export default CategoryCard;

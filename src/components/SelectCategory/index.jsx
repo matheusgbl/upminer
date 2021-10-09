@@ -14,9 +14,9 @@ import {
   FaTree,
 } from 'react-icons/fa';
 
-import { CategoryCard } from './CategoryCard';
+import CategoryCard from './CategoryCard';
 
-export const SelectCategory = () => {
+const SelectCategory = () => {
   return (
     <div className="main-page__categories">
       <CategoryCard
@@ -92,3 +92,5 @@ export const SelectCategory = () => {
     </div>
   );
 };
+
+export default SelectCategory;

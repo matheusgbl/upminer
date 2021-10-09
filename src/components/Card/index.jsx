@@ -2,10 +2,12 @@ import '../../styles/card.scss';
 
 import React from 'react';
 
-export const Card = () => {
+const Card = () => {
   return (
     <div>
       <p>Card</p>
     </div>
   );
 };
+
+export default Card;
