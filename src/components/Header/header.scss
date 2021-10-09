@@ -1,0 +1,81 @@
+$btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
+$headerLine: #e67924;
+$headerBackground: linear-gradient(to right, #004f7c, #000518);
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30vh;
+  padding: 20px 100px;
+  background-image: $headerBackground;
+
+  .up-header__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    .up-header__content__logo {
+      display: flex;
+      align-items: center;
+      img  {
+        width: 180px;
+      }
+
+      h1 {
+        color: white;
+        font-weight: 400;
+        margin-left: 1rem;
+      }
+    }
+
+    .up-header__content__info {
+      display: flex;
+      p {
+        max-width: 36rem;
+        color: white;
+        font-size: 18px;
+      }
+    }
+
+    .up-header__content__price {
+      display: flex;
+      margin: 0 10px;
+      align-items: center;
+
+      p, span {
+        color: white;
+      }
+      p {
+        margin-top: 10px;
+      }
+
+      span {
+        margin-left: 5px;
+        font-size: 30px;
+      }
+
+      button {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        background-image: $btnGradientColor;
+        margin-left: 2rem;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          cursor: pointer;
+          filter: saturate(2.5);
+        }
+      }
+    }
+  }
+
+}
+.up-header__line {
+  height: 8px;
+  background-color: $headerLine;
+}
