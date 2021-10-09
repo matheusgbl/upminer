@@ -30,6 +30,8 @@ module.exports = {
     'jsx-a11y/accessible-emoji': 'off',
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
     'simple-import-sort/exports': 'error',
     'jsx-a11y/anchor-is-valid': [
       'error',
