@@ -22,7 +22,7 @@ const Header = () => {
                     todos os fatos e acontecimentos relevantes de uma empresa desde o seu
                     ano de fundação."
                 />
-                <BannerPrice coin="R$" price="40,00" btnText="Saiba mais" />
+                <BannerPrice price="40,00" btnText="Saiba mais" />
               </div>
             </CarouselItem>
             <CarouselItem>
@@ -34,7 +34,7 @@ const Header = () => {
                     todos os fatos e acontecimentos relevantes de uma empresa desde o seu
                     ano de fundação."
                 />
-                <BannerPrice coin="R$" price="40,00" btnText="Saiba mais" />
+                <BannerPrice price="40,00" btnText="Saiba mais" />
               </div>
             </CarouselItem>
             <CarouselItem>
@@ -46,7 +46,7 @@ const Header = () => {
                     todos os fatos e acontecimentos relevantes de uma empresa desde o seu
                     ano de fundação."
                 />
-                <BannerPrice coin="R$" price="40,00" btnText="Saiba mais" />
+                <BannerPrice price="40,00" btnText="Saiba mais" />
               </div>
             </CarouselItem>
           </Carousel>
