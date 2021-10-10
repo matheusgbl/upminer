@@ -1,8 +1,8 @@
 .main-page__categories {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   svg {
     font-size: 26px;
@@ -12,16 +12,23 @@
   .main-page__category {
     margin-top: 10px;
     background-color: #eee;
-    width: 150px;
-    height: 120px;
+    width: 140px;
+    height: 100px;
     text-align: center;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1.5rem;
+    transition: all 0.2s ease-in;
 
     &.focused {
       background-color: #e67924;
+
       p, svg {
         color: white;
+      }
+      &:hover {
+        p, svg {
+          color: white;
+        }
       }
     }
 
@@ -34,9 +41,8 @@
 
     &:hover {
       cursor: pointer;
-      background-color: #e67924;
       p, svg {
-        color: white;
+        color: #e67924;
       }
     }
 

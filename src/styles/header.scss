@@ -7,15 +7,15 @@ header {
   flex-direction: column;
   justify-content: center;
   height: 30vh;
-  padding: 20px 200px;
+  padding: 20px 100px;
   background-image: $headerBackground;
 
-  .up-header__content__carousel {
+  .main-page__header__content__carousel {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
 
-    .up-header__content__banner {
+    .main-page__header__content__banner {
       display: flex;
       align-items: center;
       img  {
@@ -29,7 +29,7 @@ header {
       }
     }
 
-    .up-header__content__banner__info {
+    .main-page__header__content__banner__info {
       display: flex;
       p {
         max-width: 36.5rem;
@@ -38,7 +38,7 @@ header {
       }
     }
 
-    .up-header__content__banner__price {
+    .main-page__header__content__banner__price {
       display: flex;
       margin: 0 10px;
       align-items: center;
@@ -75,7 +75,7 @@ header {
   }
 
 }
-.up-header__line {
+.main-page__header__line {
   height: 8px;
   background-color: $headerLine;
 }

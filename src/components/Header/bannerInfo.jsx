@@ -1,13 +1,15 @@
 import React from 'react';
 
-const BannerInfo = ({ img, product, aboutProduct }) => {
+import logo from '../../assets/upminer_logo.png';
+
+const BannerInfo = ({ product, aboutProduct }) => {
   return (
     <>
-      <div className="up-header__content__banner">
-        <img src={img} alt="up miner logo" />
+      <div className="main-page__header__content__banner">
+        <img src={logo} alt="up miner logo" />
         <h1>| {product}</h1>
       </div>
-      <div className="up-header__content__banner__info">
+      <div className="main-page__header__content__banner__info">
         <p>{aboutProduct}</p>
       </div>
     </>
