@@ -48,70 +48,60 @@ const HomePage = () => {
       icon: <FaGlobe />,
       focusClass: 'main-page__category 1 focused',
       notFocusClass: 'main-page__category 1',
-      value: 'todos',
     },
     {
       name: 'Profissional',
       icon: <FaSuitcase />,
       focusClass: 'main-page__category 2 focused',
       notFocusClass: 'main-page__category 2',
-      value: 'profissional',
     },
     {
       name: 'Reguladores',
       icon: <FaLandmark />,
       focusClass: 'main-page__category 3 focused',
       notFocusClass: 'main-page__category 3',
-      value: 'reguladores',
     },
     {
       name: 'Sócio Ambiental',
       icon: <FaTree />,
       focusClass: 'main-page__category 4 focused',
       notFocusClass: 'main-page__category 4',
-      value: 'ambiental',
     },
     {
       name: 'Jurídico',
       icon: <FaGavel />,
       focusClass: 'main-page__category 5 focused',
       notFocusClass: 'main-page__category 5',
-      value: 'juridico',
     },
     {
       name: 'Listas Restritivas',
       icon: <FaBan />,
       focusClass: 'main-page__category 6 focused',
       notFocusClass: 'main-page__category 6',
-      value: 'restritivas',
     },
     {
       name: 'Mídia / Internet',
       icon: <FaGlobeAmericas />,
       focusClass: 'main-page__category 7 focused',
       notFocusClass: 'main-page__category 7',
-      value: 'internet',
     },
     {
       name: 'Bens e Imóveis',
       icon: <FaSketch />,
       focusClass: 'main-page__category 8 focused',
       notFocusClass: 'main-page__category 8',
-      value: 'imoveis',
     },
     {
       name: 'Cadastro',
       icon: <FaMale />,
       focusClass: 'main-page__category 9 focused',
       notFocusClass: 'main-page__category 9',
-      value: 'cadastro',
     },
     {
       name: 'Financeiro',
       icon: <FaPiggyBank />,
       focusClass: 'main-page__category 10 focused',
       notFocusClass: 'main-page__category 10',
-      value: 'financeiro',
     },
   ]);
 
@@ -184,30 +174,52 @@ const HomePage = () => {
 
   const [sortBy, setSortBy] = useState('');
 
-  const handleSort = useCallback((input) => {
-    let productSortArr;
+  const handleCategory = useCallback(
+    (input) => {
+      if (input === 'Todos') {
+        setFilteredProducts(productContent);
+      } else {
+        const filterResult = productContent.filter((product) =>
+          product.productName.includes(input),
+        );
+        setFilteredProducts(filterResult);
+        setIsFiltered(true);
+      }
+    },
+    [productContent],
+  );
 
-    isFiltered ? (productSortArr = filteredProducts) : (productSortArr = productContent);
+  const handleSort = useCallback(
+    (input) => {
+      let productSortArr;
 
-    if (input === 'preco') {
-      productSortArr.sort((a, b) => (a.price < b.price ? 1 : b.price < a.price ? -1 : 0));
-    } else {
-      productSortArr.sort((a, b) =>
-        a.productName > b.productName ? 1 : b.productName > a.productName ? -1 : 0,
-      );
-    }
-    setSortBy(input);
-    setFilteredProducts(productSortArr);
-    setIsFiltered(true);
-  }, []);
+      isFiltered
+        ? (productSortArr = filteredProducts)
+        : (productSortArr = productContent);
+
+      if (input === 'preco') {
+        productSortArr.sort((a, b) =>
+          a.price < b.price ? 1 : b.price < a.price ? -1 : 0,
+        );
+      } else {
+        productSortArr.sort((a, b) =>
+          a.productName > b.productName ? 1 : b.productName > a.productName ? -1 : 0,
+        );
+      }
+      setSortBy(input);
+      setFilteredProducts(productSortArr);
+      setIsFiltered(true);
+    },
+    [isFiltered, productContent, filteredProducts],
+  );
 
   return (
     <main className="main-page">
       <Header headerBannerContent={headerContent} />
       <div className="main-page__content">
-        <SelectCategory categories={categoryContent} />
+        <SelectCategory categories={categoryContent} onSelectCard={handleCategory} />
         <OrderInput value={sortBy} onChangeValue={handleSort} />
-        <Products products={productContent} />
+        <Products products={!isFiltered ? productContent : filteredProducts} />
       </div>
     </main>
   );

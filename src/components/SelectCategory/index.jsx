@@ -4,7 +4,7 @@ import React from 'react';
 
 import CategoryCard from './CategoryCard';
 
-const SelectCategory = ({ categories }) => {
+const SelectCategory = ({ categories, onSelectCard }) => {
   return (
     <div className="main-page__categories">
       {categories.map((item, index) => (
@@ -13,8 +13,9 @@ const SelectCategory = ({ categories }) => {
           icon={item.icon}
           focusClass={item.focusClass}
           notFocusClass={item.notFocusClass}
-          value={item.value}
+          value={item.name}
           key={index}
+          onSelectCard={onSelectCard}
         />
       ))}
     </div>

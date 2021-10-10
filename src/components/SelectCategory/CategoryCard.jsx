@@ -1,22 +1,20 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
-const CategoryCard = ({ name, value, icon, notFocusClass, focusClass }) => {
-  const barberRef = useRef(null);
-
+const CategoryCard = ({ name, value, icon, notFocusClass, focusClass, onSelectCard }) => {
   const [isFocused, setIsFocused] = useState(false);
-
   return (
-    <>
+    <div className="main-page__categories">
       <div
         className={!isFocused ? notFocusClass : focusClass}
-        onClick={() => setIsFocused(true)}
+        onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        tabIndex={-1}>
-        <input type="hidden" id={value} ref={barberRef} value={value} />
+        tabIndex={-1}
+        onClick={() => onSelectCard(value)}>
+        <input type="hidden" id={value} value={value} />
         {icon}
         <p>{name}</p>
       </div>
-    </>
+    </div>
   );
 };
 
