@@ -1,15 +1,22 @@
+/* eslint-disable jsx-a11y/no-onchange */
 import '../../styles/orderInput.scss';
 
 import React from 'react';
 
-const OrderInput = ({ release, price }) => {
+const OrderInput = ({ value, onChangeValue }) => {
   return (
     <div className="main-page__input">
-      <label htmlFor="order-input">ORDENAR</label>
-      <select name="order-input" id="order-input">
-        <option value={release}>Lançamento</option>
-        <option value={price}>Preço</option>
-      </select>
+      <label htmlFor="order-input">
+        ORDENAR
+        <select
+          name="order-input"
+          id="order-input"
+          value={value}
+          onChange={(e) => onChangeValue(e.target.value)}>
+          <option value="lancamento">Lançamento</option>
+          <option value="preco">Preço</option>
+        </select>
+      </label>
     </div>
   );
 };

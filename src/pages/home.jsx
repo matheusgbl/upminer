@@ -1,6 +1,6 @@
 import '../styles/home.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   FaBan,
   FaGavel,
@@ -24,7 +24,7 @@ const HomePage = () => {
     todos os fatos e acontecimentos relevantes de uma empresa desde o seu
     ano de fundação.`;
 
-  const [headerContent, setHeaderContent] = useState([
+  const [headerContent] = useState([
     {
       about: about,
       product: 'Histórico Empresarial 1',
@@ -42,7 +42,7 @@ const HomePage = () => {
     },
   ]);
 
-  const [categoryContent, setCategoryContent] = useState([
+  const [categoryContent] = useState([
     {
       name: 'Todos',
       icon: <FaGlobe />,
@@ -115,7 +115,7 @@ const HomePage = () => {
     },
   ]);
 
-  const [productContent, setProductContent] = useState([
+  const [productContent] = useState([
     {
       icon: <FaSuitcase />,
       price: '69,99',
@@ -163,7 +163,7 @@ const HomePage = () => {
     },
     {
       icon: <FaPiggyBank />,
-      price: '9,99',
+      price: '59,99',
       productName: 'Financeiro',
     },
     {
@@ -178,12 +178,35 @@ const HomePage = () => {
     },
   ]);
 
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const [isFiltered, setIsFiltered] = useState(false);
+
+  const [sortBy, setSortBy] = useState('');
+
+  const handleSort = useCallback((input) => {
+    let productSortArr;
+
+    isFiltered ? (productSortArr = filteredProducts) : (productSortArr = productContent);
+
+    if (input === 'preco') {
+      productSortArr.sort((a, b) => (a.price < b.price ? 1 : b.price < a.price ? -1 : 0));
+    } else {
+      productSortArr.sort((a, b) =>
+        a.productName > b.productName ? 1 : b.productName > a.productName ? -1 : 0,
+      );
+    }
+    setSortBy(input);
+    setFilteredProducts(productSortArr);
+    setIsFiltered(true);
+  }, []);
+
   return (
     <main className="main-page">
       <Header headerBannerContent={headerContent} />
       <div className="main-page__content">
         <SelectCategory categories={categoryContent} />
-        <OrderInput price="preco" release="lancamento" />
+        <OrderInput value={sortBy} onChangeValue={handleSort} />
         <Products products={productContent} />
       </div>
     </main>

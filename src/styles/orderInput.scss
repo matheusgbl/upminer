@@ -1,12 +1,12 @@
 .main-page__input {
   margin-top: 2rem;
 
-  & label {
+  label {
     font-weight: 600;
-    margin-right: 10px;
   }
 
-  & select {
+  select {
+    margin-left: 10px;
     width: 150px;
     outline: none;
   }
