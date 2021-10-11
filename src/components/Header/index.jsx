@@ -2,9 +2,9 @@ import '../../styles/header.scss';
 
 import React from 'react';
 
+import Button from '../Button';
 import Carousel, { CarouselItem } from '../Carousel';
 import BannerInfo from './bannerInfo';
-import BannerPrice from './bannerPrice';
 
 const Header = ({ headerBannerContent }) => {
   return (
@@ -22,7 +22,9 @@ const Header = ({ headerBannerContent }) => {
                     service={item.service}
                     aboutService={item.about}
                   />
-                  <BannerPrice price={item.price} id={item.id} />
+                  <div className="main-page__header__content__banner__price">
+                    <Button price={item.price} id={item.id} text="Saiba mais" />
+                  </div>
                 </div>
               </CarouselItem>
             ))}

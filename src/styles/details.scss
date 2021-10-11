@@ -1,0 +1,23 @@
+.main-detail-page__content {
+  padding: 30px 120px;
+
+  .main-detail-page__content__return {
+    a {
+      text-decoration: none;
+      color: #ed893e;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 10px;
+        font-size: 26px;
+        margin-top: 2px;
+      }
+
+      &:hover {
+        filter: saturate(2.5);
+      }
+    }
+  }
+}

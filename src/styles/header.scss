@@ -1,4 +1,3 @@
-$btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
 $headerLine: #e67924;
 $headerBackground: linear-gradient(to right, #004f7c, #000518);
 
@@ -35,41 +34,6 @@ header {
         max-width: 36.5rem;
         color: white;
         font-size: 18px;
-      }
-    }
-
-    .main-page__header__content__banner__price {
-      display: flex;
-      margin: 0 10px;
-      align-items: center;
-
-      p, span {
-        color: white;
-      }
-      p {
-        margin-top: 10px;
-      }
-
-      span {
-        margin-left: 5px;
-        font-size: 30px;
-      }
-
-      button {
-        font-size: 14px;
-        font-weight: 600;
-        padding: 10px 20px;
-        border: none;
-        color: white;
-        border-radius: 5px;
-        background-image: $btnGradientColor;
-        margin-left: 2rem;
-        transition: all 0.2s ease-in;
-
-        &:hover {
-          cursor: pointer;
-          filter: saturate(2.5);
-        }
       }
     }
   }
