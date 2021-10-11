@@ -47,9 +47,7 @@ header {
 
 @media (max-width: 1200px) {
   header {
-    display: flex;
     padding: 20px 100px;
-    background: $headerBackground;
 
     .main-page__header__content__carousel {
       gap: 0.8rem;
@@ -59,7 +57,6 @@ header {
         }
 
         h1 {
-          color: white;
           font-size: 24px;
         }
       }
@@ -67,8 +64,33 @@ header {
       .main-page__header__content__banner__info {
         p {
           max-width: 35.5rem;
-          color: white;
           font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 20px;
+
+    .main-page__header__content__carousel {
+      gap: 1rem;
+      .main-page__header__content__banner {
+        img  {
+          width: 120px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+      }
+
+      .main-page__header__content__banner__info {
+        p {
+          max-width: 30.5rem;
+          font-size: 14px;
         }
       }
     }

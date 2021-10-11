@@ -12,3 +12,12 @@
     outline: none;
   }
 }
+
+@media (max-width: 480px) {
+  .main-page__input {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-left: 0;
+}
+}

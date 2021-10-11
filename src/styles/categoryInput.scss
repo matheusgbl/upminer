@@ -1,0 +1,21 @@
+.main-page__input-category {
+    display: none;
+
+    label {
+      font-weight: 600;
+    }
+
+    select {
+      margin-left: 10px;
+      width: 150px;
+      outline: none;
+    }
+}
+
+@media (max-width: 480px) {
+  .main-page__input-category {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+}

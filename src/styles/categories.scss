@@ -70,3 +70,9 @@
   }
 }
 }
+
+@media (max-width: 480px) {
+  .main-page__categories {
+    display: none;
+  }
+}

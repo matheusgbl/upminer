@@ -70,3 +70,10 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
     }
   }
 }
+
+
+@media (max-width: 480px) {
+  .main-page__services {
+    gap: 0;
+  }
+}
