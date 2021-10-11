@@ -10,7 +10,7 @@ export default function App() {
       <DataProvider>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/product-detail" component={DetailPage} />
+          <Route exact path="/product-detail/:id" component={DetailPage} />
         </Switch>
       </DataProvider>
     </BrowserRouter>

@@ -1,8 +1,9 @@
 import '../../styles/services.scss';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Card = ({ icon, serviceName, serviceDescription, price }) => {
+const Card = ({ icon, serviceName, serviceDescription, price, id }) => {
   return (
     <div className="main-page__service-card">
       <div className="main-page__service-card__info">
@@ -10,10 +11,12 @@ const Card = ({ icon, serviceName, serviceDescription, price }) => {
         <h3>{serviceName}</h3>
         <p>{serviceDescription}</p>
       </div>
-      <div className="main-page__service-card__info__button">
+      <Link
+        to={`/product-detail/${id}`}
+        className="main-page__service-card__info__button">
         <p>R$ {price}</p>
         <p>Saiba mais</p>
-      </div>
+      </Link>
     </div>
   );
 };

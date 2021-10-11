@@ -4,9 +4,11 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
   display: flex;
   margin: 0 10px;
   align-items: center;
+
     p, span {
       color: white;
     }
+
     p {
       margin-top: 10px;
     }
@@ -16,16 +18,17 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
       font-size: 30px;
     }
 
-    button {
-      font-size: 14px;
+    a {
+      font-size: 18px;
       font-weight: 600;
-      padding: 10px 20px;
+      padding: 6px 24px;
       border: none;
       color: white;
       border-radius: 5px;
       background-image: $btnGradientColor;
       margin-left: 2rem;
       transition: all 0.2s ease-in;
+      text-decoration: none;
 
     &:hover {
       cursor: pointer;

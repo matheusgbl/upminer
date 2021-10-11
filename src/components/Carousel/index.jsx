@@ -1,7 +1,6 @@
 import '../../styles/carousel.scss';
 
 import React, { useEffect, useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
 
 export const CarouselItem = ({ children, width }) => {
   return (
@@ -39,14 +38,8 @@ const Carousel = ({ children }) => {
     };
   });
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => updateIndex(activeIndex + 1),
-    onSwipedRight: () => updateIndex(activeIndex - 1),
-  });
-
   return (
     <div
-      {...handlers}
       className="carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}>

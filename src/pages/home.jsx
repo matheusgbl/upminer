@@ -12,12 +12,13 @@ const HomePage = () => {
   const {
     headerContent,
     categoryContent,
-    handleCategory,
     sortBy,
-    handleSort,
     isFiltered,
     serviceContent,
     filteredServices,
+    handleCategory,
+    handleSort,
+    handleService,
   } = useContext(DataContext);
 
   return (
@@ -26,7 +27,10 @@ const HomePage = () => {
       <div className="main-page__content">
         <SelectCategory categories={categoryContent} onSelectCard={handleCategory} />
         <OrderInput value={sortBy} onChangeValue={handleSort} />
-        <Services services={!isFiltered ? serviceContent : filteredServices} />
+        <Services
+          services={!isFiltered ? serviceContent : filteredServices}
+          onSelectCard={handleService}
+        />
       </div>
     </main>
   );

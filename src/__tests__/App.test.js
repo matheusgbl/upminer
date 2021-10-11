@@ -85,15 +85,12 @@ describe('Testa a página inicial', () => {
   test('Testa se o componente Header possui um botão com o texto saiba mais', () => {
     const button1 = screen.getByTestId('header-btn-0');
     expect(button1).toHaveTextContent('Saiba mais');
-    expect(button1).toHaveProperty('type', 'button');
 
     const button2 = screen.getByTestId('header-btn-1');
     expect(button2).toHaveTextContent('Saiba mais');
-    expect(button2).toHaveProperty('type', 'button');
 
     const button3 = screen.getByTestId('header-btn-2');
     expect(button3).toHaveTextContent('Saiba mais');
-    expect(button3).toHaveProperty('type', 'button');
   });
   test('Testa se o componente Header possui funcionalidade de Carousel', async () => {
     const carouselLength = screen.getAllByTestId('header-carousel');
