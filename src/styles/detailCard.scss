@@ -18,5 +18,18 @@
     display: flex;
     margin: auto;
   }
+}
 
+@media (max-width: 1200px) {
+  .main-page-detail__content__carousel-item {
+    width: 300px;
+    height: 100%;
+
+    img {
+      width: 200px;
+      height: 150px;
+      display: flex;
+      margin: auto;
+    }
+  }
 }

@@ -8,7 +8,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import sample from '../assets/sample.png';
 import Button from '../components/Button';
-import DetailCard from '../components/DetailCarousel/detailCard';
+import DetailCard from '../components/DetailCard';
 import Header from '../components/Header';
 import { DataContext } from '../context/DataContext';
 

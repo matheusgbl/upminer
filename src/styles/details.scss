@@ -1,52 +1,81 @@
-.main-detail-page__content {
-  padding: 30px 80px;
+.main-detail-page {
+  .main-detail-page__content {
+    padding: 30px 80px;
 
-  .main-detail-page__content__infos {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60vh;
-
-    .main-detail-page__content__return {
-      a {
-        text-decoration: none;
-        color: #ed893e;
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-
-        svg {
-          margin-right: 10px;
-          font-size: 26px;
-          margin-top: 2px;
-        }
-
-        &:hover {
-          filter: saturate(2.5);
-        }
-      }
-    }
-
-    .main-page-detail__content__service-description {
+    .main-detail-page__content__infos {
       display: flex;
-      padding: 20px;
       flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
 
-      p {
-        color: #888;
-        line-height: 1.4rem;
+      .main-detail-page__content__return {
+        a {
+          text-decoration: none;
+          color: #ed893e;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 40px;
+
+          svg {
+            margin-right: 10px;
+            font-size: 26px;
+            margin-top: 2px;
+          }
+
+          &:hover {
+            filter: saturate(2.5);
+          }
+        }
       }
 
-      & > p {
-        margin-top: 30px;
+      .main-page-detail__content__service-description {
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+
+        p {
+          color: #888;
+          line-height: 1.4rem;
+        }
+
+        & > p {
+          margin-top: 30px;
+        }
+      }
+
+      .main-page-detail__content__service-price {
+        padding: 20px;
+        p, span {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+  @media (max-width: 1200px) {
+  .main-detail-page__content {
+    padding: 10px 80px;
+    .main-detail-page__content__infos {
+      height: 100%;
+
+      .main-detail-page__content__return {
+        margin-bottom: 15px;
+
+        a {
+          font-size: 20px;
+
+          svg {
+            font-size: 20px;
+          }
+
+          &:hover {
+            filter: saturate(2.5);
+          }
+        }
       }
     }
 
-    .main-page-detail__content__service-price {
-      padding: 20px;
-      p, span {
-        color: black;
-      }
-    }
   }
 }
