@@ -83,13 +83,13 @@ describe('Testa a página inicial', () => {
     expect(serviceCoin3).toHaveTextContent(realCoin);
   });
   test('Testa se o componente Header possui um botão com o texto saiba mais', () => {
-    const button1 = screen.getByTestId('header-btn-0');
+    const button1 = screen.getByTestId('button-component-0');
     expect(button1).toHaveTextContent('Saiba mais');
 
-    const button2 = screen.getByTestId('header-btn-1');
+    const button2 = screen.getByTestId('button-component-1');
     expect(button2).toHaveTextContent('Saiba mais');
 
-    const button3 = screen.getByTestId('header-btn-2');
+    const button3 = screen.getByTestId('button-component-2');
     expect(button3).toHaveTextContent('Saiba mais');
   });
   test('Testa se o componente Header possui funcionalidade de Carousel', async () => {

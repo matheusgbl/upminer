@@ -1,7 +1,7 @@
 $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
 
 
-.main-page__services {
+.main-page__content__services {
 	align-items: center;
 	display: flex;
 	flex-direction: row;
@@ -9,7 +9,7 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
 	gap: 40px;
 	justify-content: center;
 
-	.main-page__service-card {
+	.main-page__content__service-card {
 		border: 0.2px solid rgba(0, 0, 0, 0.2);
 		border-radius: 5px;
 		box-shadow: 0 0.8px 0.8px rgb(0 0 0 / 2%), 0 2.4px 2.4px rgb(0 0 0 / 3%),
@@ -25,7 +25,7 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
 		text-align: center;
 		width: 20rem;
 
-		.main-page__service-card__info {
+		.main-page__content__service-card__info {
 			margin: auto;
 
 			svg {
@@ -46,7 +46,7 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
 			}
 		}
 
-		.main-page__service-card__info__button {
+		.main-page__content__service-card__info__button {
 			background-image: $btnGradientColor;
 			border: 0;
 			border-bottom-left-radius: 5px;
@@ -73,7 +73,7 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
 
 
 @media (max-width: 480px) {
-	.main-page__services {
+	.main-page__content__services {
 		gap: 0;
 	}
 }

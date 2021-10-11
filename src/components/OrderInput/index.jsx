@@ -5,7 +5,7 @@ import React from 'react';
 
 const OrderInput = ({ value, onChangeValue }) => {
   return (
-    <div className="main-page__input">
+    <div className="main-page__content__input">
       <label htmlFor="order-input">
         ORDENAR
         <select

@@ -1,4 +1,4 @@
-.main-page__input-category {
+.main-page__content__input-category {
 	display: none;
 
 	label {
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 480px) {
-	.main-page__input-category {
+	.main-page__content__input-category {
 		display: flex;
 		justify-content: center;
 		margin-top: 1.5rem;

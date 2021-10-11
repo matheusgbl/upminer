@@ -1,14 +1,14 @@
-.main-detail-page {
-	.main-detail-page__content {
+.detail-page {
+	.detail-page__content {
 		padding: 30px 80px;
 
-		.main-detail-page__content__infos {
+		.detail-page__content__infos {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
 			justify-content: space-between;
 
-			.main-detail-page__content__return {
+			.detail-page__content__return {
 				a {
 					align-items: center;
 					color: #ed893e;
@@ -29,7 +29,7 @@
 				}
 			}
 
-			.main-page-detail__content__service-description {
+			.detail-page__content__service-description {
 				display: flex;
 				flex-direction: column;
 				padding: 20px;
@@ -44,7 +44,7 @@
 				}
 			}
 
-			.main-page-detail__content__service-price {
+			.detail-page__content__service-price {
 				padding: 20px;
 
 				p,
@@ -57,13 +57,13 @@
 }
 
 @media (max-width: 1200px) {
-	.main-detail-page__content {
+	.detail-page__content {
 		padding: 10px 80px;
 
-		.main-detail-page__content__infos {
+		.detail-page__content__infos {
 			height: 100%;
 
-			.main-detail-page__content__return {
+			.detail-page__content__return {
 				margin-bottom: 15px;
 
 				a {

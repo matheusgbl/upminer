@@ -15,7 +15,7 @@ const Header = ({ headerBannerContent }) => {
             <header className="main-page__header" data-testid="header-component">
               <div className="main-page__header__content">
                 <div
-                  className="main-page__header__content__carousel"
+                  className="main-page__header__content__carousel-item"
                   data-testid={`header-carousel-${index}`}>
                   <BannerInfo
                     id={item.id}

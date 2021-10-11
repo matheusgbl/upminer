@@ -5,7 +5,7 @@ import React from 'react';
 
 const CategoryInput = ({ categories, onChangeValue }) => {
   return (
-    <div className="main-page__input-category">
+    <div className="main-page__content__input-category">
       <label htmlFor="category-input">
         FILTRAR
         <select
@@ -13,7 +13,7 @@ const CategoryInput = ({ categories, onChangeValue }) => {
           id="category-input"
           onChange={(e) => onChangeValue(e.target.value)}>
           {categories.map((item) => (
-            <option value={item.name} key={item.id}>
+            <option value={item.name} key={item.name}>
               {item.name}
             </option>
           ))}

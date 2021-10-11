@@ -42,13 +42,13 @@ const DetailPage = () => {
   };
 
   return (
-    <main className="main-detail-page">
+    <main className="detail-page">
       <Header headerBannerContent={headerContent} />
       {detailContent.length === 0
         ? detailHeaderContent.map((detail) => (
-            <div className="main-detail-page__content" key={detail.id}>
-              <div className="main-detail-page__content__infos">
-                <div className="main-detail-page__content__return">
+            <div className="detail-page__content" key={detail.id}>
+              <div className="detail-page__content__infos">
+                <div className="detail-page__content__return">
                   <Link to="/">
                     <FaAngleLeft />
                     {detail.service}
@@ -59,7 +59,6 @@ const DetailPage = () => {
                   arrows
                   autoPlay
                   autoPlaySpeed={2000}
-                  className="main-detail-page__carousel"
                   containerClass="container-with-dots"
                   dotListClass=""
                   draggable
@@ -79,20 +78,20 @@ const DetailPage = () => {
                   <DetailCard img={sample} description={loremIpsum} />
                   <DetailCard img={sample} description={loremIpsum} />
                 </Carousel>
-                <div className="main-page-detail__content__service-description">
+                <div className="detail-page__content__service-description">
                   <p>{detail.description}</p>
                   <p>{moreAbout}</p>
                 </div>
-                <div className="main-page-detail__content__service-price">
+                <div className="detail-page__content__service-price">
                   <Button id={detail.id} price={detail.price} text="Habilitar" />
                 </div>
               </div>
             </div>
           ))
         : detailContent.map((detail) => (
-            <div className="main-detail-page__content" key={detail.id}>
-              <div className="main-detail-page__content__infos">
-                <div className="main-detail-page__content__return">
+            <div className="detail-page__content" key={detail.id}>
+              <div className="detail-page__content__infos">
+                <div className="detail-page__content__return">
                   <Link to="/">
                     <FaAngleLeft />
                     {detail.serviceName}
@@ -103,7 +102,6 @@ const DetailPage = () => {
                   arrows
                   autoPlay
                   autoPlaySpeed={2000}
-                  className="main-detail-page__carousel"
                   containerClass="container-with-dots"
                   dotListClass=""
                   draggable
@@ -123,11 +121,11 @@ const DetailPage = () => {
                   <DetailCard img={sample} description={loremIpsum} />
                   <DetailCard img={sample} description={loremIpsum} />
                 </Carousel>
-                <div className="main-page-detail__content__service-description">
+                <div className="detail-page__content__service-description">
                   <p>{detail.fullDescription}</p>
                   <p>{moreAbout}</p>
                 </div>
-                <div className="main-page-detail__content__service-price">
+                <div className="detail-page__content__service-price">
                   <Button id={detail.id} price={detail.price} text="Habilitar" />
                 </div>
               </div>
