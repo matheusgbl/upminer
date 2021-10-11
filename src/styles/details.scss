@@ -1,21 +1,11 @@
 .main-detail-page__content {
   padding: 30px 80px;
 
-
-  .main-page-detail__content__carousel {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-
   .main-detail-page__content__infos {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 60vh;
-
-
 
     .main-detail-page__content__return {
       a {
@@ -35,16 +25,20 @@
           filter: saturate(2.5);
         }
       }
-
     }
 
     .main-page-detail__content__service-description {
       display: flex;
       padding: 20px;
+      flex-direction: column;
 
       p {
         color: #888;
         line-height: 1.4rem;
+      }
+
+      & > p {
+        margin-top: 30px;
       }
     }
 

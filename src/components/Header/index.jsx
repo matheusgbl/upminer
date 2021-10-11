@@ -9,11 +9,11 @@ import BannerInfo from './bannerInfo';
 const Header = ({ headerBannerContent }) => {
   return (
     <>
-      <header className="main-page__header" data-testid="header-component">
-        <div className="main-page__header__content">
-          <Carousel>
-            {headerBannerContent.map((item, index) => (
-              <CarouselItem key={index}>
+      <Carousel>
+        {headerBannerContent.map((item, index) => (
+          <CarouselItem key={index}>
+            <header className="main-page__header" data-testid="header-component">
+              <div className="main-page__header__content">
                 <div
                   className="main-page__header__content__carousel"
                   data-testid={`header-carousel-${index}`}>
@@ -26,11 +26,11 @@ const Header = ({ headerBannerContent }) => {
                     <Button price={item.price} id={item.id} text="Saiba mais" />
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
-          </Carousel>
-        </div>
-      </header>
+              </div>
+            </header>
+          </CarouselItem>
+        ))}
+      </Carousel>
       <div className="main-page__header__line" />
     </>
   );

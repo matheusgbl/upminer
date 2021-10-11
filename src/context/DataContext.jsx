@@ -21,11 +21,7 @@ const DataProvider = ({ children }) => {
 
   const serviceDescription = `Tenha acesso aos principais eventos corporativos
   de uma empresa, como: marcos jurídicos, mudança no quadro societário, aumento
-  de capital reportagens e muito mais.
-
-  Após realizar a consulta, o histórico é salvo automaticamente, tornando as
-  informações acessíveis ao usuário. A linha do tempo pode também ser exportada
-  no formato PDF.`;
+  de capital reportagens e muito mais.`;
 
   const fullServiceHeaderDescription = `${about} ${serviceDescription}`;
 

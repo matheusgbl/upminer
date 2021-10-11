@@ -3,17 +3,16 @@ $headerBackground: linear-gradient(to right, #004f7c, #000518);
 
 header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
   height: 30vh;
   padding: 20px 100px;
-  background-image: $headerBackground;
+  background: $headerBackground;
 
   .main-page__header__content__carousel {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
-    cursor: grab;
+
 
     .main-page__header__content__banner {
       display: flex;
