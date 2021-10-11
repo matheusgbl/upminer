@@ -19,24 +19,43 @@ const DataProvider = ({ children }) => {
   todos os fatos e acontecimentos relevantes de uma empresa desde o seu
   ano de fundação.`;
 
+  const serviceDescription = `Tenha acesso aos principais eventos corporativos
+  de uma empresa, como: marcos jurídicos, mudança no quadro societário, aumento
+  de capital reportagens e muito mais.
+
+  Após realizar a consulta, o histórico é salvo automaticamente, tornando as
+  informações acessíveis ao usuário. A linha do tempo pode também ser exportada
+  no formato PDF.`;
+
+  const fullProductHeaderDescription = `${about} ${serviceDescription}`;
+
+  const serviceCardDescription = `O aplicativo Balanço Patrimonial realiza a consulta de
+  todos os balanços que são publicados nos Diários Oficiais de Empresas S.A.,
+  de capital aberto e limitadas (LTDA) de grande porte.`;
+
+  const fullProductCardDescription = `${serviceCardDescription} ${serviceDescription}`;
+
   const [headerContent] = useState([
     {
+      id: 0,
       about: about,
       product: 'Histórico Empresarial 1',
       price: '29,99',
-      id: 0,
+      description: fullProductHeaderDescription,
     },
     {
       about: about,
       product: 'Histórico Empresarial 2',
       price: '49,99',
       id: 1,
+      description: fullProductHeaderDescription,
     },
     {
       about: about,
       product: 'Histórico Empresarial 3',
       price: '69,99',
       id: 2,
+      description: fullProductHeaderDescription,
     },
   ]);
 
@@ -105,64 +124,100 @@ const DataProvider = ({ children }) => {
 
   const [productContent] = useState([
     {
+      id: 3,
       icon: <FaSuitcase />,
       price: '69,99',
       productName: 'Profissional',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 4,
       icon: <FaLandmark />,
       price: '59,99',
       productName: 'Reguladores',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 5,
       icon: <FaTree />,
       price: '19,99',
       productName: 'Sócio Ambiental',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 6,
       icon: <FaGavel />,
       price: '89,99',
       productName: 'Jurídico',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 7,
       icon: <FaBan />,
       price: '29,99',
       productName: 'Listas Restritivas',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 8,
       icon: <FaGlobeAmericas />,
       price: '49,99',
       productName: 'Mídia / Internet',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 9,
       icon: <FaSketch />,
       price: '69,99',
       productName: 'Bens e Imóveis',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 10,
       icon: <FaMale />,
       price: '39,99',
       productName: 'Cadastro',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 11,
       icon: <FaPiggyBank />,
       price: '19,99',
       productName: 'Financeiro',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 12,
       icon: <FaPiggyBank />,
       price: '59,99',
       productName: 'Financeiro',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 13,
       icon: <FaTree />,
       price: '39,99',
       productName: 'Profissional',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
     {
+      id: 14,
       icon: <FaGavel />,
       price: '19,99',
       productName: 'Profissional',
+      description: serviceCardDescription,
+      fullDescription: fullProductCardDescription,
     },
   ]);
 
