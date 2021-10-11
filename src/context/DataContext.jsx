@@ -266,10 +266,6 @@ const DataProvider = ({ children }) => {
     [isFiltered, serviceContent, filteredServices],
   );
 
-  const handleService = useCallback((value) => {
-    console.log(value);
-  }, []);
-
   return (
     <DataContext.Provider
       value={{
@@ -281,7 +277,6 @@ const DataProvider = ({ children }) => {
         filteredServices,
         handleCategory,
         handleSort,
-        handleService,
       }}>
       {children}
     </DataContext.Provider>

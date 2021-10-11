@@ -13,6 +13,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
+    cursor: grab;
 
     .main-page__header__content__banner {
       display: flex;
@@ -33,7 +34,7 @@ header {
       p {
         max-width: 36.5rem;
         color: white;
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   }

@@ -1,0 +1,22 @@
+.main-page-detail__content__carousel-item {
+  box-shadow: 0 9px 0px 0px rgba(0, 0, 0, 0.2), 0 -9px 0px 0px rgba(0, 0, 0, 0.2),
+  12px 0 15px -4px rgba(0, 0, 0, 0.2), -12px 0 15px -4px rgba(0, 0, 0, 0.2);
+
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 0 20px;
+
+  p {
+    color: #f0660b;
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    margin: auto;
+  }
+
+}

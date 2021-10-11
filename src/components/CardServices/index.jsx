@@ -4,7 +4,7 @@ import React from 'react';
 
 import Card from './Card';
 
-const Services = ({ services, onSelectCard }) => {
+const Services = ({ services }) => {
   return (
     <div className="main-page__services">
       {services.map((item, index) => (
@@ -14,7 +14,6 @@ const Services = ({ services, onSelectCard }) => {
           serviceName={item.serviceName}
           serviceDescription={item.description}
           id={item.id}
-          onSelectCard={onSelectCard}
           key={index}
         />
       ))}
