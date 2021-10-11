@@ -24,16 +24,19 @@ const DataProvider = ({ children }) => {
       about: about,
       product: 'Histórico Empresarial 1',
       price: '29,99',
+      id: 0,
     },
     {
       about: about,
       product: 'Histórico Empresarial 2',
       price: '49,99',
+      id: 1,
     },
     {
       about: about,
       product: 'Histórico Empresarial 3',
       price: '69,99',
+      id: 2,
     },
   ]);
 

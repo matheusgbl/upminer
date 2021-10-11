@@ -5,7 +5,7 @@ import { useSwipeable } from 'react-swipeable';
 
 export const CarouselItem = ({ children, width }) => {
   return (
-    <div className="carousel-item" style={{ width: width }}>
+    <div data-testid="header-carousel" className="carousel-item" style={{ width: width }}>
       {children}
     </div>
   );
@@ -50,7 +50,10 @@ const Carousel = ({ children }) => {
       className="carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}>
-      <div className="inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+      <div
+        className="inner"
+        data-testid="carousel-item"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {React.Children.map(children, (child) => {
           return React.cloneElement(child, { width: '100%' });
         })}

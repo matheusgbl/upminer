@@ -9,14 +9,20 @@ import BannerPrice from './bannerPrice';
 const Header = ({ headerBannerContent }) => {
   return (
     <>
-      <header className="main-page__header">
+      <header className="main-page__header" data-testid="header-component">
         <div className="main-page__header__content">
           <Carousel>
             {headerBannerContent.map((item, index) => (
               <CarouselItem key={index}>
-                <div className="main-page__header__content__carousel">
-                  <BannerInfo product={item.product} aboutProduct={item.about} />
-                  <BannerPrice price={item.price} />
+                <div
+                  className="main-page__header__content__carousel"
+                  data-testid={`header-carousel-${index}`}>
+                  <BannerInfo
+                    id={item.id}
+                    product={item.product}
+                    aboutProduct={item.about}
+                  />
+                  <BannerPrice price={item.price} id={item.id} />
                 </div>
               </CarouselItem>
             ))}
