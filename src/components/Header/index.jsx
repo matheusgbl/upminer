@@ -19,8 +19,8 @@ const Header = ({ headerBannerContent }) => {
                   data-testid={`header-carousel-${index}`}>
                   <BannerInfo
                     id={item.id}
-                    product={item.product}
-                    aboutProduct={item.about}
+                    service={item.service}
+                    aboutService={item.about}
                   />
                   <BannerPrice price={item.price} id={item.id} />
                 </div>

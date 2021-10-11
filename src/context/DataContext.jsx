@@ -27,35 +27,35 @@ const DataProvider = ({ children }) => {
   informações acessíveis ao usuário. A linha do tempo pode também ser exportada
   no formato PDF.`;
 
-  const fullProductHeaderDescription = `${about} ${serviceDescription}`;
+  const fullServiceHeaderDescription = `${about} ${serviceDescription}`;
 
   const serviceCardDescription = `O aplicativo Balanço Patrimonial realiza a consulta de
   todos os balanços que são publicados nos Diários Oficiais de Empresas S.A.,
   de capital aberto e limitadas (LTDA) de grande porte.`;
 
-  const fullProductCardDescription = `${serviceCardDescription} ${serviceDescription}`;
+  const fullServiceCardDescription = `${serviceCardDescription} ${serviceDescription}`;
 
   const [headerContent] = useState([
     {
       id: 0,
       about: about,
-      product: 'Histórico Empresarial 1',
+      service: 'Histórico Empresarial 1',
       price: '29,99',
-      description: fullProductHeaderDescription,
+      description: fullServiceHeaderDescription,
     },
     {
       about: about,
-      product: 'Histórico Empresarial 2',
+      service: 'Histórico Empresarial 2',
       price: '49,99',
       id: 1,
-      description: fullProductHeaderDescription,
+      description: fullServiceHeaderDescription,
     },
     {
       about: about,
-      product: 'Histórico Empresarial 3',
+      service: 'Histórico Empresarial 3',
       price: '69,99',
       id: 2,
-      description: fullProductHeaderDescription,
+      description: fullServiceHeaderDescription,
     },
   ]);
 
@@ -122,106 +122,106 @@ const DataProvider = ({ children }) => {
     },
   ]);
 
-  const [productContent] = useState([
+  const [serviceContent] = useState([
     {
       id: 3,
       icon: <FaSuitcase />,
       price: '69,99',
-      productName: 'Profissional',
+      serviceName: 'Profissional',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 4,
       icon: <FaLandmark />,
       price: '59,99',
-      productName: 'Reguladores',
+      serviceName: 'Reguladores',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 5,
       icon: <FaTree />,
       price: '19,99',
-      productName: 'Sócio Ambiental',
+      serviceName: 'Sócio Ambiental',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 6,
       icon: <FaGavel />,
       price: '89,99',
-      productName: 'Jurídico',
+      serviceName: 'Jurídico',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 7,
       icon: <FaBan />,
       price: '29,99',
-      productName: 'Listas Restritivas',
+      serviceName: 'Listas Restritivas',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 8,
       icon: <FaGlobeAmericas />,
       price: '49,99',
-      productName: 'Mídia / Internet',
+      serviceName: 'Mídia / Internet',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 9,
       icon: <FaSketch />,
       price: '69,99',
-      productName: 'Bens e Imóveis',
+      serviceName: 'Bens e Imóveis',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 10,
       icon: <FaMale />,
       price: '39,99',
-      productName: 'Cadastro',
+      serviceName: 'Cadastro',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 11,
       icon: <FaPiggyBank />,
       price: '19,99',
-      productName: 'Financeiro',
+      serviceName: 'Financeiro',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 12,
       icon: <FaPiggyBank />,
       price: '59,99',
-      productName: 'Financeiro',
+      serviceName: 'Financeiro',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 13,
       icon: <FaTree />,
       price: '39,99',
-      productName: 'Profissional',
+      serviceName: 'Profissional',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
     {
       id: 14,
       icon: <FaGavel />,
       price: '19,99',
-      productName: 'Profissional',
+      serviceName: 'Profissional',
       description: serviceCardDescription,
-      fullDescription: fullProductCardDescription,
+      fullDescription: fullServiceCardDescription,
     },
   ]);
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredServices, setFilteredServices] = useState([]);
 
   const [isFiltered, setIsFiltered] = useState(false);
 
@@ -230,40 +230,40 @@ const DataProvider = ({ children }) => {
   const handleCategory = useCallback(
     (input) => {
       if (input === 'Todos') {
-        setFilteredProducts(productContent);
+        setFilteredServices(serviceContent);
       } else {
-        const filterResult = productContent.filter((product) =>
-          product.productName.includes(input),
+        const filterResult = serviceContent.filter((service) =>
+          service.serviceName.includes(input),
         );
-        setFilteredProducts(filterResult);
+        setFilteredServices(filterResult);
         setIsFiltered(true);
       }
     },
-    [productContent],
+    [serviceContent],
   );
 
   const handleSort = useCallback(
     (input) => {
-      let productSortArr;
+      let serviceSortArr;
 
       isFiltered
-        ? (productSortArr = filteredProducts)
-        : (productSortArr = productContent);
+        ? (serviceSortArr = filteredServices)
+        : (serviceSortArr = serviceContent);
 
       if (input === 'preco') {
-        productSortArr.sort((a, b) =>
+        serviceSortArr.sort((a, b) =>
           a.price < b.price ? 1 : b.price < a.price ? -1 : 0,
         );
       } else {
-        productSortArr.sort((a, b) =>
-          a.productName > b.productName ? 1 : b.productName > a.productName ? -1 : 0,
+        serviceSortArr.sort((a, b) =>
+          a.serviceName > b.serviceName ? 1 : b.serviceName > a.serviceName ? -1 : 0,
         );
       }
       setSortBy(input);
-      setFilteredProducts(productSortArr);
+      setFilteredServices(serviceSortArr);
       setIsFiltered(true);
     },
-    [isFiltered, productContent, filteredProducts],
+    [isFiltered, serviceContent, filteredServices],
   );
 
   return (
@@ -273,8 +273,8 @@ const DataProvider = ({ children }) => {
         categoryContent,
         sortBy,
         isFiltered,
-        productContent,
-        filteredProducts,
+        serviceContent,
+        filteredServices,
         handleCategory,
         handleSort,
       }}>

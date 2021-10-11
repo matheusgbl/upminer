@@ -2,9 +2,9 @@ import '../styles/home.scss';
 
 import React, { useContext } from 'react';
 
+import Services from '../components/CardServices';
 import Header from '../components/Header';
 import OrderInput from '../components/OrderInput';
-import Products from '../components/Products';
 import SelectCategory from '../components/SelectCategory';
 import { DataContext } from '../context/DataContext';
 
@@ -16,8 +16,8 @@ const HomePage = () => {
     sortBy,
     handleSort,
     isFiltered,
-    productContent,
-    filteredProducts,
+    serviceContent,
+    filteredServices,
   } = useContext(DataContext);
 
   return (
@@ -26,7 +26,7 @@ const HomePage = () => {
       <div className="main-page__content">
         <SelectCategory categories={categoryContent} onSelectCard={handleCategory} />
         <OrderInput value={sortBy} onChangeValue={handleSort} />
-        <Products products={!isFiltered ? productContent : filteredProducts} />
+        <Services services={!isFiltered ? serviceContent : filteredServices} />
       </div>
     </main>
   );

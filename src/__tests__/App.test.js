@@ -12,19 +12,19 @@ const about =
 const headerContent = [
   {
     about: about,
-    product: 'Histórico Empresarial 1',
+    service: 'Histórico Empresarial 1',
     price: '29,99',
     id: 0,
   },
   {
     about: about,
-    product: 'Histórico Empresarial 2',
+    service: 'Histórico Empresarial 2',
     price: '49,99',
     id: 1,
   },
   {
     about: about,
-    product: 'Histórico Empresarial 3',
+    service: 'Histórico Empresarial 3',
     price: '69,99',
     id: 2,
   },
@@ -40,7 +40,7 @@ describe('Testa a página inicial', () => {
     const headerElement = screen.getByTestId('header-component');
     expect(headerElement).toBeInTheDocument();
   });
-  test('Testa se o componente Header possui a logo do produto', () => {
+  test('Testa se o componente Header possui a logo do serviço', () => {
     const logoImg1 = screen.getByAltText('up-miner-logo-0');
     const logoImg2 = screen.getByAltText('up-miner-logo-1');
     const logoImg3 = screen.getByAltText('up-miner-logo-2');
@@ -48,7 +48,7 @@ describe('Testa a página inicial', () => {
     expect(logoImg2).toBeInTheDocument();
     expect(logoImg3).toBeInTheDocument();
   });
-  test('Testa se o componente Header possui os nomes dos produtos', () => {
+  test('Testa se o componente Header possui os nomes dos serviços', () => {
     const firstHeading = screen.getByText('| Histórico Empresarial 1');
     const secondHeading = screen.getByText('| Histórico Empresarial 2');
     const thirdHeading = screen.getByText('| Histórico Empresarial 3');
@@ -57,9 +57,9 @@ describe('Testa a página inicial', () => {
     expect(secondHeading).toBeInTheDocument();
     expect(thirdHeading).toBeInTheDocument();
   });
-  test('Testa se o componente Header possui texto com informação do produto', () => {
-    const productText = screen.getByTestId('product-about-0');
-    expect(productText).toHaveTextContent(about);
+  test('Testa se o componente Header possui texto com informação do serviço', () => {
+    const serviceText = screen.getByTestId('service-about-0');
+    expect(serviceText).toHaveTextContent(about);
   });
   test('Testa se o component Header possui o valor dos serviços', () => {
     const realCoin = 'R$';
