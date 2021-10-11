@@ -20,36 +20,65 @@ const DetailPage = () => {
   nunc nunc.`;
 
   const detailContent = serviceContent.filter((service) => service.id == id);
+  const detailHeaderContent = headerContent.filter((service) => service.id == id);
+  console.log(detailHeaderContent);
 
   return (
     <main className="main-detail-page">
       <Header headerBannerContent={headerContent} />
-      {detailContent.map((detail) => (
-        <div className="main-detail-page__content" key={detail.id}>
-          <div className="main-detail-page__content__infos">
-            <div className="main-detail-page__content__return">
-              <Link to="/">
-                <FaAngleLeft />
-                {detail.serviceName}
-              </Link>
+      {detailContent.length === 0
+        ? detailHeaderContent.map((detail) => (
+            <div className="main-detail-page__content" key={detail.id}>
+              <div className="main-detail-page__content__infos">
+                <div className="main-detail-page__content__return">
+                  <Link to="/">
+                    <FaAngleLeft />
+                    {detail.service}
+                  </Link>
+                </div>
+                <div className="main-page-detail__content__carousel">
+                  <DetailCarousel show={2}>
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                  </DetailCarousel>
+                </div>
+                <div className="main-page-detail__content__service-description">
+                  <p>{detail.description}</p>
+                </div>
+                <div className="main-page-detail__content__service-price">
+                  <Button id={detail.id} price={detail.price} text="Habilitar" />
+                </div>
+              </div>
             </div>
-            <div className="main-page-detail__content__carousel">
-              <DetailCarousel show={2}>
-                <DetailCard img={sample} description={loremIpsum} />
-                <DetailCard img={sample} description={loremIpsum} />
-                <DetailCard img={sample} description={loremIpsum} />
-                <DetailCard img={sample} description={loremIpsum} />
-              </DetailCarousel>
+          ))
+        : detailContent.map((detail) => (
+            <div className="main-detail-page__content" key={detail.id}>
+              <div className="main-detail-page__content__infos">
+                <div className="main-detail-page__content__return">
+                  <Link to="/">
+                    <FaAngleLeft />
+                    {detail.serviceName}
+                  </Link>
+                </div>
+                <div className="main-page-detail__content__carousel">
+                  <DetailCarousel show={2}>
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                  </DetailCarousel>
+                </div>
+                <div className="main-page-detail__content__service-description">
+                  <p>{detail.fullDescription}</p>
+                </div>
+                <div className="main-page-detail__content__service-price">
+                  <Button id={detail.id} price={detail.price} text="Habilitar" />
+                </div>
+              </div>
             </div>
-            <div className="main-page-detail__content__service-description">
-              <p>{detail.fullDescription}</p>
-            </div>
-            <div className="main-page-detail__content__service-price">
-              <Button id={detail.id} price={detail.price} text="Habilitar" />
-            </div>
-          </div>
-        </div>
-      ))}
+          ))}
     </main>
   );
 };

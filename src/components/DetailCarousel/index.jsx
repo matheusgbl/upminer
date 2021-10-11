@@ -15,6 +15,18 @@ const DetailCarousel = (props) => {
     setLength(children.length);
   }, [children]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(currentIndex + 1);
+    }, 5000);
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
+
   const next = () => {
     if (currentIndex < length - show) {
       setCurrentIndex((prevState) => prevState + 1);

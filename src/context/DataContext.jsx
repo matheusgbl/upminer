@@ -44,17 +44,17 @@ const DataProvider = ({ children }) => {
       description: fullServiceHeaderDescription,
     },
     {
+      id: 1,
       about: about,
       service: 'Histórico Empresarial 2',
       price: '49,99',
-      id: 1,
       description: fullServiceHeaderDescription,
     },
     {
+      id: 2,
       about: about,
       service: 'Histórico Empresarial 3',
       price: '69,99',
-      id: 2,
       description: fullServiceHeaderDescription,
     },
   ]);
