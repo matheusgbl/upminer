@@ -37,3 +37,31 @@ $btnGradientColor: linear-gradient(to right, #ed893e , #f0660b);
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .main-page__button {
+      p, span {
+        color: white;
+        font-weight: 400;
+      }
+      span {
+        margin-left: 5px;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 4px 20px;
+
+      &:hover {
+        cursor: pointer;
+        filter: saturate(2.5);
+      }
+    }
+  }
+}

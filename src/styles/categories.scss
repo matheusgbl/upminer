@@ -47,7 +47,26 @@
         color: #e67924;
       }
     }
-
-
   }
+}
+
+
+@media (max-width: 1200px) {
+  .main-page__categories {
+    gap: 10px;
+
+    svg {
+      font-size: 20px;
+    }
+
+    .main-page__category {
+      width: 100px;
+      height: 90px;
+      padding: 1rem;
+
+      p {
+        white-space: normal;
+      }
+  }
+}
 }
