@@ -1,21 +1,21 @@
 .main-page__input-category {
-    display: none;
+	display: none;
 
-    label {
-      font-weight: 600;
-    }
+	label {
+		font-weight: 600;
+	}
 
-    select {
-      margin-left: 10px;
-      width: 150px;
-      outline: none;
-    }
+	select {
+		margin-left: 10px;
+		outline: none;
+		width: 150px;
+	}
 }
 
 @media (max-width: 480px) {
-  .main-page__input-category {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-}
+	.main-page__input-category {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.5rem;
+	}
 }

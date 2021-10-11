@@ -1,78 +1,83 @@
 .main-page__categories {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
 
-  svg {
-    font-size: 26px;
-    color: #333;
-  }
+	svg {
+		color: #333;
+		font-size: 26px;
+	}
 
-  .main-page__category {
-    margin-top: 10px;
-    background-color: #f6f6f6;
-    width: 140px;
-    height: 100px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: all 0.2s ease-in;
+	.main-page__category {
+		background-color: #f6f6f6;
+		border-radius: 10px;
+		height: 100px;
+		margin-top: 10px;
+		padding: 1.5rem;
+		text-align: center;
+		transition: all 0.2s ease-in;
+		width: 140px;
 
-    &.focused {
-      background-color: #e67924;
+		&.focused {
+			background-color: #e67924;
 
-      p, svg {
-        color: white;
-      }
-      &:hover {
-        p, svg {
-          color: white;
-        }
-      }
-    }
+			p,
+			svg {
+				color: #fff;
+			}
 
-    p {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      white-space: nowrap;
-    }
+			&:hover {
+				p,
+				svg {
+					color: #fff;
+				}
+			}
+		}
 
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-      p, svg {
-        color: #e67924;
-      }
-    }
-  }
+		p {
+			display: flex;
+			justify-content: center;
+			white-space: nowrap;
+			width: 100%;
+		}
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+
+			p,
+			svg {
+				color: #e67924;
+			}
+		}
+	}
 }
 
 
 @media (max-width: 1200px) {
-  .main-page__categories {
-    gap: 10px;
+	.main-page__categories {
+		gap: 10px;
 
-    svg {
-      font-size: 20px;
-    }
+		svg {
+			font-size: 20px;
+		}
 
-    .main-page__category {
-      width: 100px;
-      height: 90px;
-      padding: 1rem;
+		.main-page__category {
+			height: 90px;
+			padding: 1rem;
+			width: 100px;
 
-      p {
-        white-space: normal;
-      }
-  }
-}
+			p {
+				white-space: normal;
+			}
+		}
+	}
 }
 
 @media (max-width: 480px) {
-  .main-page__categories {
-    display: none;
-  }
+	.main-page__categories {
+		display: none;
+	}
 }

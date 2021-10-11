@@ -1,81 +1,84 @@
 .main-detail-page {
-  .main-detail-page__content {
-    padding: 30px 80px;
+	.main-detail-page__content {
+		padding: 30px 80px;
 
-    .main-detail-page__content__infos {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+		.main-detail-page__content__infos {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: space-between;
 
-      .main-detail-page__content__return {
-        a {
-          text-decoration: none;
-          color: #ed893e;
-          font-size: 24px;
-          display: flex;
-          align-items: center;
-          margin-bottom: 40px;
+			.main-detail-page__content__return {
+				a {
+					align-items: center;
+					color: #ed893e;
+					display: flex;
+					font-size: 24px;
+					margin-bottom: 40px;
+					text-decoration: none;
 
-          svg {
-            margin-right: 10px;
-            font-size: 26px;
-            margin-top: 2px;
-          }
+					svg {
+						font-size: 26px;
+						margin-right: 10px;
+						margin-top: 2px;
+					}
 
-          &:hover {
-            filter: saturate(2.5);
-          }
-        }
-      }
+					&:hover {
+						filter: saturate(2.5);
+					}
+				}
+			}
 
-      .main-page-detail__content__service-description {
-        display: flex;
-        padding: 20px;
-        flex-direction: column;
+			.main-page-detail__content__service-description {
+				display: flex;
+				flex-direction: column;
+				padding: 20px;
 
-        p {
-          color: #888;
-          line-height: 1.4rem;
-        }
+				p {
+					color: #888;
+					line-height: 1.4rem;
+				}
 
-        & > p {
-          margin-top: 30px;
-        }
-      }
+				& > p {
+					margin-top: 30px;
+				}
+			}
 
-      .main-page-detail__content__service-price {
-        padding: 20px;
-        p, span {
-          color: black;
-        }
-      }
-    }
-  }
+			.main-page-detail__content__service-price {
+				padding: 20px;
+
+				p,
+				span {
+					color: #000;
+				}
+			}
+		}
+	}
 }
 
-  @media (max-width: 1200px) {
-  .main-detail-page__content {
-    padding: 10px 80px;
-    .main-detail-page__content__infos {
-      height: 100%;
+@media (max-width: 1200px) {
+	.main-detail-page__content {
+		padding: 10px 80px;
 
-      .main-detail-page__content__return {
-        margin-bottom: 15px;
+		.main-detail-page__content__infos {
+			height: 100%;
 
-        a {
-          font-size: 20px;
+			.main-detail-page__content__return {
+				margin-bottom: 15px;
 
-          svg {
-            font-size: 20px;
-          }
+				a {
+					font-size: 20px;
 
-          &:hover {
-            filter: saturate(2.5);
-          }
-        }
-      }
-    }
+					svg {
+						font-size: 20px;
+					}
 
-  }
+					&:hover {
+						filter: saturate(2.5);
+					}
+				}
+			}
+		}
+
+	}
 }

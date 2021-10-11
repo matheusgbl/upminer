@@ -1,23 +1,23 @@
 .main-page__input {
-  margin-top: 2rem;
-  margin-left: 1.5rem;
+	margin-left: 1.5rem;
+	margin-top: 2rem;
 
-  label {
-    font-weight: 600;
-  }
+	label {
+		font-weight: 600;
+	}
 
-  select {
-    margin-left: 10px;
-    width: 150px;
-    outline: none;
-  }
+	select {
+		margin-left: 10px;
+		outline: none;
+		width: 150px;
+	}
 }
 
 @media (max-width: 480px) {
-  .main-page__input {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-left: 0;
-}
+	.main-page__input {
+		display: flex;
+		justify-content: center;
+		margin-left: 0;
+		margin-top: 1.5rem;
+	}
 }
