@@ -6,7 +6,7 @@ import Card from './Card';
 
 const Services = ({ services }) => {
   return (
-    <div className="main-page__content__services">
+    <div className="main-page__content__services" data-testid="service-cards">
       {services.map((item, index) => (
         <Card
           icon={item.icon}
