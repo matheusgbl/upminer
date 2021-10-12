@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { DataProvider } from './context/DataContext';

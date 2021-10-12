@@ -42,45 +42,49 @@ const DetailPage = () => {
   };
 
   return (
-    <main className="detail-page">
+    <main className="detail-page" data-testid="detail-page">
       <Header headerBannerContent={headerContent} />
       {detailContent.length === 0
         ? detailHeaderContent.map((detail) => (
             <div className="detail-page__content" key={detail.id}>
               <div className="detail-page__content__infos">
                 <div className="detail-page__content__return">
-                  <Link to="/">
+                  <Link to="/" data-testid="return-link">
                     <FaAngleLeft />
                     {detail.service}
                   </Link>
                 </div>
-                <Carousel
-                  additionalTransfrom={0}
-                  arrows
-                  autoPlay
-                  autoPlaySpeed={2000}
-                  containerClass="container-with-dots"
-                  dotListClass=""
-                  draggable
-                  focusOnSelect={false}
-                  infinite
-                  itemClass=""
-                  keyBoardControl
-                  minimumTouchDrag={80}
-                  renderDotsOutside={false}
-                  responsive={responsive}
-                  showDots={false}
-                  sliderClass=""
-                  slidesToSlide={1}
-                  swipeable>
-                  <DetailCard img={sample} description={loremIpsum} />
-                  <DetailCard img={sample} description={loremIpsum} />
-                  <DetailCard img={sample} description={loremIpsum} />
-                  <DetailCard img={sample} description={loremIpsum} />
-                </Carousel>
+                <div
+                  className="detail-page__content__carousel"
+                  data-testid="service-detail-card">
+                  <Carousel
+                    additionalTransfrom={0}
+                    arrows
+                    autoPlay
+                    autoPlaySpeed={2000}
+                    containerClass="container-with-dots"
+                    dotListClass=""
+                    draggable
+                    focusOnSelect={false}
+                    infinite
+                    itemClass=""
+                    keyBoardControl
+                    minimumTouchDrag={80}
+                    renderDotsOutside={false}
+                    responsive={responsive}
+                    showDots={false}
+                    sliderClass=""
+                    slidesToSlide={1}
+                    swipeable>
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                  </Carousel>
+                </div>
                 <div className="detail-page__content__service-description">
-                  <p>{detail.description}</p>
-                  <p>{moreAbout}</p>
+                  <p data-testid="detail-description">{detail.description}</p>
+                  <p data-testid="detail-more-about">{moreAbout}</p>
                 </div>
                 <div className="detail-page__content__service-price">
                   <Button id={detail.id} price={detail.price} text="Habilitar" />
@@ -92,38 +96,42 @@ const DetailPage = () => {
             <div className="detail-page__content" key={detail.id}>
               <div className="detail-page__content__infos">
                 <div className="detail-page__content__return">
-                  <Link to="/">
+                  <Link to="/" data-testid="return-link">
                     <FaAngleLeft />
                     {detail.serviceName}
                   </Link>
                 </div>
-                <Carousel
-                  additionalTransfrom={0}
-                  arrows
-                  autoPlay
-                  autoPlaySpeed={2000}
-                  containerClass="container-with-dots"
-                  dotListClass=""
-                  draggable
-                  focusOnSelect={false}
-                  infinite
-                  itemClass=""
-                  keyBoardControl
-                  minimumTouchDrag={80}
-                  renderDotsOutside={false}
-                  responsive={responsive}
-                  showDots={false}
-                  sliderClass=""
-                  slidesToSlide={1}
-                  swipeable>
-                  <DetailCard img={sample} description={loremIpsum} />
-                  <DetailCard img={sample} description={loremIpsum} />
-                  <DetailCard img={sample} description={loremIpsum} />
-                  <DetailCard img={sample} description={loremIpsum} />
-                </Carousel>
+                <div
+                  className="detail-page__content__carousel"
+                  data-testid="service-detail-card">
+                  <Carousel
+                    additionalTransfrom={0}
+                    arrows
+                    autoPlay
+                    autoPlaySpeed={2000}
+                    containerClass="container-with-dots"
+                    dotListClass=""
+                    draggable
+                    focusOnSelect={false}
+                    infinite
+                    itemClass=""
+                    keyBoardControl
+                    minimumTouchDrag={80}
+                    renderDotsOutside={false}
+                    responsive={responsive}
+                    showDots={false}
+                    sliderClass=""
+                    slidesToSlide={1}
+                    swipeable>
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                    <DetailCard img={sample} description={loremIpsum} />
+                  </Carousel>
+                </div>
                 <div className="detail-page__content__service-description">
-                  <p>{detail.fullDescription}</p>
-                  <p>{moreAbout}</p>
+                  <p data-testid="detail-description">{detail.fullDescription}</p>
+                  <p data-testid="detail-more-about">{moreAbout}</p>
                 </div>
                 <div className="detail-page__content__service-price">
                   <Button id={detail.id} price={detail.price} text="Habilitar" />
