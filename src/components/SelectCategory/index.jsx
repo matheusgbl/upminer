@@ -6,7 +6,7 @@ import CategoryCard from './CategoryCard';
 
 const SelectCategory = ({ categories, onSelectCard }) => {
   return (
-    <div className="main-page__content__categories">
+    <div className="main-page__content__categories" data-testid="category-card">
       {categories.map((item, index) => (
         <CategoryCard
           name={item.name}

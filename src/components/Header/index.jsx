@@ -8,11 +8,11 @@ import BannerInfo from './bannerInfo';
 
 const Header = ({ headerBannerContent }) => {
   return (
-    <>
+    <div data-testid="header-component">
       <Carousel>
         {headerBannerContent.map((item, index) => (
           <CarouselItem key={index}>
-            <header className="main-page__header" data-testid="header-component">
+            <header className="main-page__header">
               <div className="main-page__header__content">
                 <div
                   className="main-page__header__content__carousel-item"
@@ -32,7 +32,7 @@ const Header = ({ headerBannerContent }) => {
         ))}
       </Carousel>
       <div className="main-page__header__line" />
-    </>
+    </div>
   );
 };
 

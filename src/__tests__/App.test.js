@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 
 import Header from '../components/Header';
+import SelectCategory from '../components/SelectCategory';
 import renderWithRouter from '../renderWithRouter';
 
 const about =
@@ -30,9 +32,62 @@ const headerContent = [
   },
 ];
 
+const categoryContent = [
+  {
+    name: 'Todos',
+    focusClass: 'main-page__content__category 1 focused',
+    notFocusClass: 'main-page__content__category 1',
+  },
+  {
+    name: 'Profissional',
+    focusClass: 'main-page__content__category 2 focused',
+    notFocusClass: 'main-page__content__category 2',
+  },
+  {
+    name: 'Reguladores',
+    focusClass: 'main-page__content__category 3 focused',
+    notFocusClass: 'main-page__content__category 3',
+  },
+  {
+    name: 'Sócio Ambiental',
+    focusClass: 'main-page__content__category 4 focused',
+    notFocusClass: 'main-page__content__category 4',
+  },
+  {
+    name: 'Jurídico',
+    focusClass: 'main-page__content__category 5 focused',
+    notFocusClass: 'main-page__content__category 5',
+  },
+  {
+    name: 'Listas Restritivas',
+    focusClass: 'main-page__content__category 6 focused',
+    notFocusClass: 'main-page__content__category 6',
+  },
+  {
+    name: 'Mídia / Internet',
+    focusClass: 'main-page__content__category 7 focused',
+    notFocusClass: 'main-page__content__category 7',
+  },
+  {
+    name: 'Bens e Imóveis',
+    focusClass: 'main-page__content__category 8 focused',
+    notFocusClass: 'main-page__content__category 8',
+  },
+  {
+    name: 'Cadastro',
+    focusClass: 'main-page__content__category 9 focused',
+    notFocusClass: 'main-page__content__category 9',
+  },
+  {
+    name: 'Financeiro',
+    focusClass: 'main-page__content__category 10 focused',
+    notFocusClass: 'main-page__content__category 10',
+  },
+];
+
 jest.setTimeout(30000);
 
-describe('Testa a página inicial', () => {
+describe('Testa o componente Header', () => {
   beforeEach(() => {
     renderWithRouter(<Header headerBannerContent={headerContent} />);
   });
@@ -64,32 +119,32 @@ describe('Testa a página inicial', () => {
   test('Testa se o component Header possui o valor dos serviços', () => {
     const realCoin = 'R$';
 
-    const servicePrice1 = screen.getByTestId('header-price-0');
-    const serviceCoin1 = screen.getByTestId('header-coin-0');
+    const servicePrice1 = screen.getByTestId('button-component-price-0');
+    const serviceCoin1 = screen.getByTestId('button-component-coin-0');
 
     expect(servicePrice1).toHaveTextContent('29,99');
     expect(serviceCoin1).toHaveTextContent(realCoin);
 
-    const servicePrice2 = screen.getByTestId('header-price-1');
-    const serviceCoin2 = screen.getByTestId('header-coin-1');
+    const servicePrice2 = screen.getByTestId('button-component-price-1');
+    const serviceCoin2 = screen.getByTestId('button-component-coin-1');
 
     expect(servicePrice2).toHaveTextContent('49,99');
     expect(serviceCoin2).toHaveTextContent(realCoin);
 
-    const servicePrice3 = screen.getByTestId('header-price-2');
-    const serviceCoin3 = screen.getByTestId('header-coin-2');
+    const servicePrice3 = screen.getByTestId('button-component-price-2');
+    const serviceCoin3 = screen.getByTestId('button-component-coin-2');
 
     expect(servicePrice3).toHaveTextContent('69,99');
     expect(serviceCoin3).toHaveTextContent(realCoin);
   });
   test('Testa se o componente Header possui um botão com o texto saiba mais', () => {
-    const button1 = screen.getByTestId('button-component-0');
+    const button1 = screen.getByTestId('button-component-link-0');
     expect(button1).toHaveTextContent('Saiba mais');
 
-    const button2 = screen.getByTestId('button-component-1');
+    const button2 = screen.getByTestId('button-component-link-1');
     expect(button2).toHaveTextContent('Saiba mais');
 
-    const button3 = screen.getByTestId('button-component-2');
+    const button3 = screen.getByTestId('button-component-link-2');
     expect(button3).toHaveTextContent('Saiba mais');
   });
   test('Testa se o componente Header possui funcionalidade de Carousel', async () => {
@@ -101,5 +156,39 @@ describe('Testa a página inicial', () => {
 
     await new Promise((r) => setTimeout(r, 5000));
     expect(carouselElement).toHaveStyle('transform: translateX(-100%)');
+  });
+});
+
+describe('Testa o componente de cards com os filtros de categorias', () => {
+  beforeEach(() => {
+    const handleClick = jest.fn();
+    renderWithRouter(
+      <SelectCategory categories={categoryContent} onSelectCard={handleClick} />,
+    );
+  });
+  test('Testa se o componente é renderizado', () => {
+    const categories = screen.getByTestId('category-card');
+
+    expect(categories).toBeInTheDocument();
+  });
+  test('Testa se os cards tem quantidade correta', () => {
+    const categories = screen.getAllByTestId('category-card-input');
+
+    expect(categories).toHaveLength(10);
+  });
+  test('Testa se o componente possui os nomes das categorias', () => {
+    const firstCard = screen.getByTestId('category-card-Todos');
+
+    expect(firstCard).toHaveTextContent('Todos');
+
+    const lastCard = screen.getByTestId('category-card-Financeiro');
+
+    expect(lastCard).toHaveTextContent('Financeiro');
+  });
+  test('Testa se o componente muda a classe para mudança de cor de fundo ao ser clicado', () => {
+    const categoryCard = screen.getByTestId('category-card-btn-Todos');
+
+    userEvent.click(categoryCard);
+    expect(categoryCard).toHaveClass('focused');
   });
 });

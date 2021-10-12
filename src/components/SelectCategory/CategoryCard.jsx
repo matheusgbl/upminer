@@ -8,10 +8,11 @@ const CategoryCard = ({ name, value, icon, notFocusClass, focusClass, onSelectCa
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       tabIndex={-1}
+      data-testid={`category-card-btn-${value}`}
       onClick={() => onSelectCard(value)}>
-      <input type="hidden" id={value} value={value} />
+      <input type="hidden" id={value} value={value} data-testid="category-card-input" />
       {icon}
-      <p>{name}</p>
+      <p data-testid={`category-card-${value}`}>{name}</p>
     </div>
   );
 };
