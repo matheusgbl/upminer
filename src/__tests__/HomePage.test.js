@@ -161,16 +161,19 @@ const serviceContent = [
   },
   {
     id: 14,
-    price: '19,99',
+    price: '12,99',
     serviceName: 'Profissional',
     description: serviceCardDescription,
   },
 ];
 
+let isFiltered = false;
+let filteredServices;
+
 jest.setTimeout(30000);
 const handleClick = jest.fn();
 
-describe.skip('Testa o componente Header', () => {
+describe('Testa o componente Header', () => {
   beforeEach(() => {
     renderWithRouter(<Header headerBannerContent={headerContent} />);
   });
@@ -242,7 +245,7 @@ describe.skip('Testa o componente Header', () => {
   });
 });
 
-describe.skip('Testa o componente de cards com os filtros de categorias', () => {
+describe('Testa o componente de cards com os filtros de categorias', () => {
   beforeEach(() => {
     renderWithRouter(
       <SelectCategory categories={categoryContent} onSelectCard={handleClick} />,
@@ -275,7 +278,7 @@ describe.skip('Testa o componente de cards com os filtros de categorias', () => 
   });
 });
 
-describe.skip('Testa o componente de ordenação dos serviços', () => {
+describe('Testa o componente de ordenação dos serviços', () => {
   beforeEach(() => {
     renderWithRouter(<OrderInput onChangeValue={handleClick} />);
   });
@@ -305,17 +308,17 @@ describe('Testa o componente de cards de serviços disponíveis', () => {
   beforeEach(() => {
     renderWithRouter(<Services services={serviceContent} onSelectCard={handleClick} />);
   });
-  test.skip('Testa se o componente de cards de serviços é renderizado', () => {
+  test('Testa se o componente de cards de serviços é renderizado', () => {
     const serviceCard = screen.getByTestId('service-cards');
 
     expect(serviceCard).toBeInTheDocument();
   });
-  test.skip('Testa se possui um total de 12 cards de serviços', () => {
+  test('Testa se possui um total de 12 cards de serviços', () => {
     const cardsLength = screen.getAllByTestId('service-card-content');
 
     expect(cardsLength).toHaveLength(12);
   });
-  test.skip('Testa o texto do nome do serviço no card', () => {
+  test('Testa o texto do nome do serviço no card', () => {
     const firstCard = screen.getByTestId('service-card-info-3');
 
     expect(firstCard).toHaveTextContent('Profissional');
@@ -328,7 +331,7 @@ describe('Testa o componente de cards de serviços disponíveis', () => {
 
     expect(thirdCard).toHaveTextContent('Sócio Ambiental');
   });
-  test.skip('Testa a descrição do serviço no card', () => {
+  test('Testa a descrição do serviço no card', () => {
     const firstCard = screen.getByTestId('service-card-description-3');
 
     expect(firstCard).toHaveTextContent(serviceCardDescription);
@@ -362,5 +365,75 @@ describe('Testa o componente de cards de serviços disponíveis', () => {
     expect(cardBtn3).toHaveTextContent(btnCoin);
     expect(cardBtn3).toHaveTextContent('19,99');
     expect(cardBtn3).toHaveTextContent(btnText);
+  });
+});
+
+describe('Testa a funcionalidade de ordenação e filtragem dos cards de serviços', () => {
+  beforeEach(() => {
+    renderWithRouter(
+      <>
+        <SelectCategory categories={categoryContent} onSelectCard={handleClick} />
+        <OrderInput onChangeValue={handleClick} />
+        <Services services={!isFiltered ? serviceContent : filteredServices} />
+      </>,
+    );
+  });
+  test('Testa se ao selecionar um card de categoria, os cards de serviços são filtrados', () => {
+    const professionalCardBtn = screen.getByTestId('category-card-btn-Profissional');
+
+    userEvent.click(professionalCardBtn);
+    isFiltered = true;
+    const filterProfResult = serviceContent.filter((service) =>
+      service.serviceName.includes('Profissional'),
+    );
+
+    filteredServices = filterProfResult;
+    expect(filteredServices).toHaveLength(3);
+
+    const financeCardBtn = screen.getByTestId('category-card-btn-Financeiro');
+
+    userEvent.click(financeCardBtn);
+    isFiltered = true;
+    const filterFinResult = serviceContent.filter((service) =>
+      service.serviceName.includes('Financeiro'),
+    );
+
+    filteredServices = filterFinResult;
+    expect(filteredServices).toHaveLength(2);
+
+    const allCardBtn = screen.getByTestId('category-card-btn-Todos');
+
+    userEvent.click(allCardBtn);
+    isFiltered = true;
+    const filterAllResult = serviceContent.filter(
+      (service) => service.serviceName !== 'Todos',
+    );
+
+    filteredServices = filterAllResult;
+    expect(filteredServices).toHaveLength(12);
+  });
+  test('Testa a ordenação dos cards ao selecionar ordenação por preço', () => {
+    userEvent.selectOptions(screen.getByRole('combobox'), 'Preço');
+    isFiltered = true;
+
+    let filteredServices = serviceContent.sort((a, b) =>
+      a.price < b.price ? 1 : b.price < a.price ? -1 : 0,
+    );
+    expect(filteredServices[0].serviceName).toBe('Jurídico');
+    expect(filteredServices[0].price).toBe('89,99');
+    expect(filteredServices[11].serviceName).toBe('Profissional');
+    expect(filteredServices[11].price).toBe('12,99');
+  });
+  test('Testa a ordenação dos cards ao selecionar ordenação por lançamento', () => {
+    userEvent.selectOptions(screen.getByRole('combobox'), 'Lançamento');
+    isFiltered = true;
+
+    let filteredServices = serviceContent.sort((a, b) =>
+      a.serviceName < b.serviceName ? 1 : b.serviceName < a.serviceName ? -1 : 0,
+    );
+    expect(filteredServices[0].serviceName).toBe('Sócio Ambiental');
+    expect(filteredServices[0].price).toBe('19,99');
+    expect(filteredServices[11].serviceName).toBe('Bens e Imóveis');
+    expect(filteredServices[11].price).toBe('69,99');
   });
 });
