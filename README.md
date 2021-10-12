@@ -23,11 +23,11 @@ npm install
 ### Para executar a aplicação utilize o comando: 
 
 ```
-npm dev
+npm run dev
 ```
 
 ### Para a execução dos testes utilize o comando: 
 
 ```
-npm test
+npm run test
 ```
