@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@testing-library/react": "^12.1.2",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
